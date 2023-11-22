@@ -113,7 +113,9 @@ Now we can restart the named service to apply the changes.
 
 #### FORWARD ZONE (/var/lib/bind/sistema.sol.dns) ####
 
-As we indicated in the file `named.conf.local`, we will store the zone config file at `/var/lib/bind/sistema.sol.dns`. We can use the file `/etc/bind/db.empty` as a template. To accomplish the tasks' objetives, the file should look like this: 
+As we indicated in the file `named.conf.local`, we will store the zone config file at `/var/lib/bind/sistema.sol.dns`. *(we can use the file `/etc/bind/db.empty` as a template)* 
+
+To accomplish the tasks' objetives, the file should look like this: 
 
 ```conf
 ;
