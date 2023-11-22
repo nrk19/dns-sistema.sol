@@ -3,16 +3,18 @@
 ## INTRODUCTION ##
 
 We are going to define a zone called sistema.sol, which will be located in the net **192.168.57.0/24**
+
 The domain will consists of four servers:
 
-|        FQDN          |  IP  |
-|----------------------|------|
-| mercurio.sistema.sol | .101 |
-| venus.sistema.sol    | .102 |
-| tierra.sistema.sol   | .103 |
-| marte.sistema.sol    | .104 |
+|        FQDN          |       IP       |
+|----------------------|----------------|
+| mercurio.sistema.sol | 192.168.57.101 |
+| venus.sistema.sol    | 192.168.57.102 |
+| tierra.sistema.sol   | 192.168.57.103 |
+| marte.sistema.sol    | 192.168.57.104 |
+|----------------------|----------------|
 
-- **Tierra** will be the master, and will be authoritative of both zones, direct and reverse.
+- **Tierra** will be the master nameserver, and will be authoritative of both zones, direct and reverse.
 - **Venus** will be the slave nameserver.
 - **Marte** will be the mail server.
 
@@ -66,14 +68,14 @@ options {
 
 **Explanation of the choosen options**
 
-- **acl**: here we set our trusted networks
-- **forwarders**: we set 208.67.222.222 for non-authoritative request
+- **acl**: here we set our trusted networks.
+- **forwarders**: we set 208.67.222.222 for non-authoritative requests.
 - **allow-transfer { trusted; }**: we allow transfer from our trusted network. This will allow the transfer of the zone between the master and the slave.
 - recursion: allow recursion from trusted network.
 
 #### named.conf.local ####
 
-In this file is were the zones are defined, is here where we will indicate where the files of each zone will be store. Also, we need to set the role of the server (master or slave). The configuration of the file will be sligthy different in this case.
+In this file is were the zones are defined, is here where we will indicate where the files of each zone will be store. Also, we need to set the role of the server (master or slave). The configuration of the file will be sligthy different between master and slave in this case.
 
 **Master:**
 
@@ -88,6 +90,7 @@ zone "57.168.192.in-addr.arpa" {
 	file "/var/lib/bind/sistema.sol.rev";
 };
 ```
+
 **Slave:**
 
 ```conf
