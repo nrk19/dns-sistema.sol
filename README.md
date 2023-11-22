@@ -14,7 +14,7 @@ The domain will consists of four servers:
 | marte.sistema.sol    | 192.168.57.104 |
 |----------------------|----------------|
 
-- **Tierra** will be the master nameserver, and will be authoritative of both zones, direct and reverse.
+- **Tierra** will be the master nameserver, and will be authoritative of both zones, forward and reverse.
 - **Venus** will be the slave nameserver.
 - **Marte** will be the mail server.
 
@@ -45,7 +45,7 @@ acl trusted {
 };
 
 options {
-	directory "/var/cache/bind";
+	forwardory "/var/cache/bind";
 
 	forwarders {
 	 	208.67.222.222;
@@ -109,11 +109,11 @@ zone "57.168.192.in-addr.arpa" {
 
 Now we can restart the named service to apply the changes.
 
-*We can test the configuration with the command `# named-checkconf [file]` for config files and `# named-checkzone [zone] [file]` for checking zone files.*
+* We can test the configuration with the command: `# named-checkconf [file]` for config files, and `# named-checkzone [zone] [file]` for zone files.
 
 ### ZONES CONFIGURATION ###
 
-#### DIRECT ZONE (/var/lib/bind/sistema.sol.dns) ####
+#### FORWARD ZONE (/var/lib/bind/sistema.sol.dns) ####
 
 As we indicated in the file `named.conf.local`, we will store the zone config file at `/var/lib/bind/sistema.sol.dns`. We can use the file `/etc/bind/db.empty` as a template. To comply with the objetives, the file should look like this: 
 
