@@ -103,11 +103,11 @@ zone "57.168.192.in-addr.arpa" {
 };
 ```
 
-Now we can restart the named service to apply the changes. We can test the configuration with the command `# named-checkconf [file]` for config files and `#named-checkzone [zone] [file]` for checking zone files.
+Now we can restart the named service to apply the changes. We can test the configuration with the command `# named-checkconf [file]` for config files and `# named-checkzone [zone] [file]` for checking zone files.
 
 ### ZONES CONFIGURATION ###
 
-#### direct ####
+#### DIRECT ZONE (/var/lib/bind/sistema.sol.dns) ####
 
 As we indicated in the file `named.conf.local`, we will store the zone config file at `/var/lib/bind/sistema.sol.dns`. We can use the file `/etc/bind/db.empty` as a template. To comply with the objetives, the file should look like this: 
 
@@ -145,7 +145,7 @@ ns2.sistema.sol.	IN	CNAME	venus.sistema.sol.
 mail.sistema.sol.	IN	CNAME	marte.sistema.sol.
 ```
 
-#### reverse ####
+#### REVERSE ZONE (/var/lib/bind/sistema.sol.rev) ####
 
 ```conf
 ;
