@@ -52,7 +52,7 @@ options {
 	
 	forward only;
 
-	allow-transfer { trusted;};
+	allow-transfer { trusted; };
 	
 	listen-on port 53 { 192.168.57.103; };
 	
