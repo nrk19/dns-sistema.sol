@@ -12,7 +12,6 @@ The domain will consists of four servers:
 | venus.sistema.sol    | 192.168.57.102 |
 | tierra.sistema.sol   | 192.168.57.103 |
 | marte.sistema.sol    | 192.168.57.104 |
-|----------------------|----------------|
 
 - **Tierra** will be the master nameserver, and will be authoritative of both zones, forward and reverse.
 - **Venus** will be the slave nameserver.
