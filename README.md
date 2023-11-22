@@ -44,7 +44,7 @@ acl trusted {
 };
 
 options {
-	forwardory "/var/cache/bind";
+	directory "/var/cache/bind";
 
 	forwarders {
 	 	208.67.222.222;
@@ -148,6 +148,12 @@ ns1.sistema.sol.	IN	CNAME	tierra.sistema.sol.
 ns2.sistema.sol.	IN	CNAME	venus.sistema.sol.
 mail.sistema.sol.	IN	CNAME	marte.sistema.sol.
 ```
+*(we used absolute paths in this case)*
+
+- Set negative cache TTL to 2h (7200s)
+- Set tierra and venus as the domain name servers
+- Set marte as the domain mail server
+- Set the corresponding aliases to name servers and mail server
 
 #### REVERSE ZONE (/var/lib/bind/sistema.sol.rev) ####
 
@@ -177,4 +183,7 @@ $TTL	86400
 102			IN	PTR	venus.sistema.sol.
 104			IN	PTR	marte.sistema.sol.
 ```
+*(we used relative paths in this case)*
 
+- Set the name servers (tierra and venus)
+- Set the corresponding IP to name translations
