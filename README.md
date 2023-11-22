@@ -73,7 +73,7 @@ options {
 
 #### named.conf.local ####
 
-In this file is were the zones are defined, is here where we will indicate where the files of each zone will be store. Also, we need to set the role of the server (master or slave). The configuration of the file will be sligthy different between master and slave in this case.
+In this file is where the zones are defined, so it is here where we will indicate where the files of each zone will be stored. Also, we need to set the role of the server (master or slave). The configuration of the file will be sligthy different between master and slave in this case.
 
 **Master:**
 
@@ -152,7 +152,7 @@ mail.sistema.sol.	IN	CNAME	marte.sistema.sol.
 
 - Set negative cache TTL to 2h (7200s)
 - Set tierra and venus as the domain name servers
-- Set marte as the domain mail server
+- Set marte as the domain mail server with a priority of 10
 - Set the corresponding aliases to name servers and mail server
 
 #### REVERSE ZONE (/var/lib/bind/sistema.sol.rev) ####
