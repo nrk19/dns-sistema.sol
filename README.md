@@ -103,7 +103,7 @@ zone "57.168.192.in-addr.arpa" {
 };
 ```
 
-Now we can restart the named service to apply the changes. It is a good practice to test the configuration before restart the service. It can be done with the command `# named-checkconf [file]`
+Now we can restart the named service to apply the changes. We can test the configuration with the command `# named-checkconf [file]` for config files and `#named-checkzone [zone] [file]` for checking zone files.
 
 ### ZONES CONFIGURATION ###
 
