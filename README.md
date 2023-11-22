@@ -185,5 +185,6 @@ $TTL	86400
 ```
 *(we used relative paths in this case)*
 
+- Set negative cache TTL to 2h (7200s)
 - Set the name servers (tierra and venus)
 - Set the corresponding IP to name translations
