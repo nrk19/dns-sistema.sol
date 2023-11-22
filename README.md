@@ -65,7 +65,7 @@ options {
 };
 ```
 
-**Explanation of the choosen options**
+Explanation of the choosen options:
 
 - **acl**: here we set our trusted networks.
 - **forwarders**: we set 208.67.222.222 for non-authoritative requests.
