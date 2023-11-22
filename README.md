@@ -20,7 +20,8 @@ The domain will consists of four servers:
 
 ### NAMED CONFIGURATION ###
 
-First, we will set tierra and venus as the default DNS servers (it will be useful to test the configuration later) 
+First, we will set tierra and venus as the default DNS servers (it will be useful to test the configuration later). 
+We just edit the file `/etc/resolv.conf` in both servers.
 
 ```conf
 nameserver 192.168.57.103
