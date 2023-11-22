@@ -34,7 +34,7 @@ nameserver 192.168.57.102
 *(All the configuration files of bind are located in `/etc/bind/`)* 
 
 We will begin editing the file `named.conf.options`. In this file we will set settings such as, trusted networks, external forwarders, enable or disable recursion, etc.
-To comply with the objetives of the task we will set the following options (in both servers):
+To comply with the objectives of the task we will set the following options (in both servers):
 
 ```conf
 acl trusted {
@@ -113,7 +113,7 @@ Now we can restart the named service to apply the changes.
 
 #### FORWARD ZONE (/var/lib/bind/sistema.sol.dns) ####
 
-As we indicated in the file `named.conf.local`, we will store the zone config file at `/var/lib/bind/sistema.sol.dns`. We can use the file `/etc/bind/db.empty` as a template. To comply with the objetives, the file should look like this: 
+As we indicated in the file `named.conf.local`, we will store the zone config file at `/var/lib/bind/sistema.sol.dns`. We can use the file `/etc/bind/db.empty` as a template. To accomplish the tasks' objetives, the file should look like this: 
 
 ```conf
 ;
