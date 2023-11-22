@@ -20,7 +20,7 @@ $TTL	86400
 tierra.sistema.sol.	IN	A	192.168.57.103
 mercurio.sistema.sol.	IN	A	192.168.57.101
 venus.sistema.sol.	IN	A	192.168.57.102
-marte.sistema.sol.	IN	A	192.168.57.102
+marte.sistema.sol.	IN	A	192.168.57.104
 
 ; mail servers (MX)
 sistema.sol.		IN	MX 10	marte.sistema.sol.
