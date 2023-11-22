@@ -65,12 +65,11 @@ options {
 };
 ```
 
-Explanation of the choosen options:
-
-- **acl**: here we set our trusted networks.
-- **forwarders**: we set 208.67.222.222 for non-authoritative requests.
-- **allow-transfer { trusted; }**: we allow transfer from our trusted network. This will allow the transfer of the zone between the master and the slave.
-- recursion: allow recursion from trusted network.
+- Explanation of the choosen options:
+    - `acl`: here we set our trusted networks.
+    - `forwarders`: we set 208.67.222.222 for non-authoritative requests.
+    - `allow-transfer { trusted; }`: we allow transfer from our trusted network. This will allow the transfer of the zone between the master and the slave.
+    - `recursion`: allow recursion from trusted network.
 
 #### named.conf.local ####
 
@@ -154,7 +153,7 @@ mail.sistema.sol.	IN	CNAME	marte.sistema.sol.
 
 ```conf
 ;
-; 57.168.192
+; zone: 57.168.192.in-addr.arpa
 ;
 
 $TTL	86400
