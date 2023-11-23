@@ -54,7 +54,7 @@ options {
 
 	allow-transfer { trusted; };
 	
-	listen-on port 53 { 192.168.57.103; };
+	listen-on port 53 { 192.168.57.X; };
 	
 	recursion yes;
 	allow-recursion { trusted; };
@@ -64,6 +64,7 @@ options {
 	// listen-on-v6 { any; };
 };
 ```
+* (X should be replaced with the IP of the server)
 
 - Explanation of the choosen options:
     - `acl`: here we set our trusted networks.
