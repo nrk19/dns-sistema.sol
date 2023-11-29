@@ -2,7 +2,7 @@
 
 ## INTRODUCTION ##
 
-We are going to define a zone called sistema.sol, which will be located in the net **192.168.57.0/24**
+The objective of this practice is to create two machines that will act as DNS servers of a imaginary domain called "sistema.sol". We will use **Vagrant** to automatize the task of creating and configuring the machines. 
 
 The domain will consists of four servers:
 
