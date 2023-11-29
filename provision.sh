@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+DEBIAN_FRONTEND=noninteractive
 CONFIG_DIR="/vagrant/config"
 
 # install dependencies
