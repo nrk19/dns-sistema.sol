@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   end
 
   # method to create the machines
-  def create_machine(config, name, box, hostname, provision ,ip_address)
+  def create_machine(config, name, box, hostname, provision, ip_address)
     config.vm.define name do |node|
       node.vm.box = box
       node.vm.hostname = hostname
