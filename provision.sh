@@ -11,7 +11,7 @@ cp ${CONFIG_DIR}/resolv.conf /etc/resolv.conf
 cp ${CONFIG_DIR}/named /etc/default
 
 # check if we are on tierra or venus before copying files
-if [ $(cat /etc/hostname) == "tierra*" ]; then
+if [ $(cat /etc/hostname) == "tierra" ]; then
     cp ${CONFIG_DIR}/tierra/named.conf.options /etc/bind
     cp ${CONFIG_DIR}/tierra/named.conf.local /etc/bind
     cp ${CONFIG_DIR}/tierra/sistema.sol.dns /var/lib/bind
@@ -21,5 +21,5 @@ else
     cp ${CONFIG_DIR}/venus/named.conf.options /etc/bind
 fi
 
-# reboot to apply all changes
-reboot
+# restart the service to apply all changes
+systemctl restart named

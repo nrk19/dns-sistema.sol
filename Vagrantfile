@@ -2,28 +2,23 @@
 
 Vagrant.configure("2") do |config|
 
-    # tierra config
-    config.vm.define "tierra" do |tierra|
-      tierra.vm.box = "debian/bullseye64"
-      tierra.vm.hostname = "tierra.sistema.sol"
-      tierra.vm.network :private_network, type: "static", ip: "192.168.57.103"
-      tierra.vm.provider :virtualbox do |vbox|
-          vbox.memory = 256
-          vbox.linked_clone = true
-      end
-      tierra.vm.provision "shell", path: "provision.sh"
-    end
+  config.vm.provider :virtualbox do |vb|
+    vb.memory = 256
+    vb.linked_clone = true
+  end
 
-    # venus config
-    config.vm.define "venus" do |venus|
-      venus.vm.box = "debian/bullseye64"
-      venus.vm.hostname = "venus.sistema.sol"
-      venus.vm.network :private_network, type: "static", ip: "192.168.57.102"
-      venus.vm.provider :virtualbox do |vbox|
-        vbox.memory = 256
-        vbox.linked_clone = true
-      end
-      venus.vm.provision "shell", path: "provision.sh"
+  # method to create the machines
+  def create_machine(config, name, box, hostname, provision ,ip_address)
+    config.vm.define name do |node|
+      node.vm.box = box
+      node.vm.hostname = hostname
+      node.vm.network :private_network, type: "static", ip: ip_address
+      node.vm.provision "shell", path: provision
     end
+  end
+
+  # creation of the machines
+  create_machine(config, "tierra", "debian/bullseye64", "tierra.sistema.sol", "provision.sh", "192.168.57.103")
+  create_machine(config, "venus", "debian/bullseye64", "venus.sistema.sol", "provision.sh", "192.168.57.102")
+
 end
-
