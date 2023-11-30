@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       node.vm.hostname = hostname
       node.vm.network :private_network, type: "static", ip: ip_address
       node.vm.provision "shell", path: provision
-      node.vm.provision "shell", inline: "cp /vagrant/config/resolv.conf /etc/", run: "always"  # this will prevent vbox of rewriting resolv.conf
+      node.vm.provision "shell", inline: "cp /vagrant/config/resolv.conf /etc/", run: "always"  # this will prevent vbox of overwrite resolv.conf
     end
   end
 
