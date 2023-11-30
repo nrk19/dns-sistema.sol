@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "this have worked!"
-
 function resolve () {
     dig $nameserver +short $@
 }
